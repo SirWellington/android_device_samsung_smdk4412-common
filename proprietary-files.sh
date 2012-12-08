@@ -27,9 +27,9 @@ sleep 3
 adb pull /sbin/cbd ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/sbin/cbd
 adb pull /system/bin/bcm4334.hcd ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/bin/bcm4334.hcd
 adb pull /system/bin/bcm4334_murata.hcd ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/bin/bcm4334_murata.hcd
-adb pull /system/bin/bcm4334_semcosh.hcd ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/bin/bcm4334_semcosh.hcd
+adb pull /system/bin/bcm4334_semco.hcd ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/bin/bcm4334_semco.hcd
 adb pull /system/bin/bintvoutservice ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/bin/bintvoutservice
-adb pull /system/bin/gps.cer ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/bin/gps.cer
+#adb pull /system/bin/gps.cer ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/bin/gps.cer
 adb pull /system/bin/lpmkey ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/bin/lpmkey
 adb pull /system/bin/playlpm ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/bin/playlpm
 adb pull /system/cameradata/datapattern_420sp.yuv ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/cameradata/datapattern_420sp.yuv
@@ -40,12 +40,12 @@ adb pull /system/etc/wifi/bcmdhd_mfg.bin_b2 ../../../vendor/$MANUFACTURER/$DEVIC
 adb pull /system/etc/wifi/bcmdhd_p2p.bin_b2 ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/etc/wifi/bcmdhd_p2p.bin_b2
 adb pull /system/etc/wifi/bcmdhd_sta.bin_b2 ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/etc/wifi/bcmdhd_sta.bin_b2
 adb pull /system/etc/wifi/nvram_mfg.txt ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/etc/wifi/nvram_mfg.txt
-adb pull /system/etc/wifi/nvram_mfg.txt_murata ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/etc/wifi/nvram_mfg.txt_murata
-adb pull /system/etc/wifi/nvram_mfg.txt_murata_b2 ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/etc/wifi/nvram_mfg.txt_murata_b2
+#adb pull /system/etc/wifi/nvram_mfg.txt_murata ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/etc/wifi/nvram_mfg.txt_murata
+#adb pull /system/etc/wifi/nvram_mfg.txt_murata_b2 ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/etc/wifi/nvram_mfg.txt_murata_b2
 adb pull /system/etc/wifi/nvram_mfg.txt_semcosh ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/etc/wifi/nvram_mfg.txt_semcosh
 adb pull /system/etc/wifi/nvram_net.txt ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/etc/wifi/nvram_net.txt
-adb pull /system/etc/wifi/nvram_net.txt_murata ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/etc/wifi/nvram_net.txt_murata
-adb pull /system/etc/wifi/nvram_net.txt_murata_b2 ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/etc/wifi/nvram_net.txt_murata_b2
+#adb pull /system/etc/wifi/nvram_net.txt_murata ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/etc/wifi/nvram_net.txt_murata
+#adb pull /system/etc/wifi/nvram_net.txt_murata_b2 ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/etc/wifi/nvram_net.txt_murata_b2
 adb pull /system/etc/wifi/nvram_net.txt_semcosh ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/etc/wifi/nvram_net.txt_semcosh
 adb pull /system/lib/egl/libEGL_mali.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/egl/libEGL_mali.so
 adb pull /system/lib/egl/libGLESv1_CM_mali.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/egl/libGLESv1_CM_mali.so
@@ -154,10 +154,8 @@ PRODUCT_COPY_FILES += \\
 
 PRODUCT_COPY_FILES += \\
     \$(LOCAL_PATH)/proprietary/system/bin/bcm4334.hcd:system/bin/bcm4334.hcd \\
-    \$(LOCAL_PATH)/proprietary/system/bin/bcm4334_murata.hcd:system/bin/bcm4334_murata.hcd \\
-    \$(LOCAL_PATH)/proprietary/system/bin/bcm4334_semcosh.hcd:system/bin/bcm4334_semcosh.hcd \\
+    \$(LOCAL_PATH)/proprietary/system/bin/bcm4334_semco.hcd:system/bin/bcm4334_semco.hcd \\
     \$(LOCAL_PATH)/proprietary/system/bin/bintvoutservice:system/bin/bintvoutservice \\
-    \$(LOCAL_PATH)/proprietary/system/bin/gps.cer:system/bin/gps.cer \\
     \$(LOCAL_PATH)/proprietary/system/bin/lpmkey:system/bin/lpmkey \\
     \$(LOCAL_PATH)/proprietary/system/bin/playlpm:system/bin/playlpm
 
@@ -171,12 +169,8 @@ PRODUCT_COPY_FILES += \\
     \$(LOCAL_PATH)/proprietary/system/etc/wifi/bcmdhd_p2p.bin_b2:system/etc/wifi/bcmdhd_p2p.bin_b2 \\
     \$(LOCAL_PATH)/proprietary/system/etc/wifi/bcmdhd_sta.bin_b2:system/etc/wifi/bcmdhd_sta.bin_b2 \\
     \$(LOCAL_PATH)/proprietary/system/etc/wifi/nvram_mfg.txt:system/etc/wifi/nvram_mfg.txt \\
-    \$(LOCAL_PATH)/proprietary/system/etc/wifi/nvram_mfg.txt_murata:system/etc/wifi/nvram_mfg.txt_murata \\
-    \$(LOCAL_PATH)/proprietary/system/etc/wifi/nvram_mfg.txt_murata_b2:system/etc/wifi/nvram_mfg.txt_murata_b2 \\
     \$(LOCAL_PATH)/proprietary/system/etc/wifi/nvram_mfg.txt_semcosh:system/etc/wifi/nvram_mfg.txt_semcosh \\
     \$(LOCAL_PATH)/proprietary/system/etc/wifi/nvram_net.txt:system/etc/wifi/nvram_net.txt \\
-    \$(LOCAL_PATH)/proprietary/system/etc/wifi/nvram_net.txt_murata:system/etc/wifi/nvram_net.txt_murata \\
-    \$(LOCAL_PATH)/proprietary/system/etc/wifi/nvram_net.txt_murata_b2:system/etc/wifi/nvram_net.txt_murata_b2 \\
     \$(LOCAL_PATH)/proprietary/system/etc/wifi/nvram_net.txt_semcosh:system/etc/wifi/nvram_net.txt_semcosh
 
 PRODUCT_COPY_FILES += \\
@@ -293,7 +287,7 @@ EOF
 
 LOCAL_PATH := \$(call my-dir)
 
-ifneq (\$(filter i9300 n7100 n8000 n8013,\$(TARGET_DEVICE)),)
+ifneq (\$(filter i9300 n7100 n8000 n8013 t0ltetmo,\$(TARGET_DEVICE)),)
 
 include \$(CLEAR_VARS)
 LOCAL_MODULE := libTVOut
